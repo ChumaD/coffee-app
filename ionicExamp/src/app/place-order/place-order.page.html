@@ -1,0 +1,64 @@
+<ion-header >
+  <ion-toolbar color="secondary"  >
+    <ion-title align="center">Place order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<ion-card *ngIf="id">
+<ion-card-header>
+  <ion-card-title align="center">{{category.id}}</ion-card-title>
+</ion-card-header>
+<ion-card-content>
+  <img height="250" width="200" src="../../assets/image/{{category.pic}}">
+ <h1>R {{category.price}}</h1>
+</ion-card-content>
+
+<ion-list>
+<ion-radio-group (ionChange)="sugars($event)">
+<ion-list-header>
+  <ion-label><h1>Sugar</h1></ion-label>
+</ion-list-header>
+
+  <ion-radio value="1"></ion-radio>
+  <ion-label> 1 </ion-label>
+
+  <ion-radio value="2"></ion-radio>
+  <ion-label> 2 </ion-label>
+    
+  <ion-radio value="3"></ion-radio>
+  <ion-label> 3 </ion-label>
+
+</ion-radio-group>
+</ion-list>
+<ion-list>
+<ion-radio-group (ionChange)="milks($event)">
+  <ion-list-header>
+    <ion-label><h1>Milk</h1></ion-label>
+  </ion-list-header>
+  
+    <ion-radio value="yes"></ion-radio>
+    <ion-label> Yes </ion-label>
+  
+    <ion-radio value="no"></ion-radio>
+    <ion-label> No </ion-label>
+  </ion-radio-group>
+</ion-list>
+
+<ion-list>
+<ion-label><h1>Quantity</h1></ion-label>
+ <ion-select (ionChange)="quant($event)">
+  <ion-select-option value=1>1</ion-select-option>
+  <ion-select-option value=2>2</ion-select-option>
+  <ion-select-option value=3>3</ion-select-option>
+  <ion-select-option value=4>4</ion-select-option>
+  <ion-select-option value=5>5</ion-select-option>
+</ion-select>
+</ion-list>
+<ion-button (click)="placeOrder()" [routerLink]="['/orders']">Order<ion-icon name="basket"></ion-icon></ion-button>
+</ion-card>
+
+
+
+</ion-content>

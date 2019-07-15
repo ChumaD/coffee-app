@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div *ngIf="empty">
+  <h3>No orders available!!</h3>
+   </div>
+
+<ion-content>
+<ion-card *ngFor="let orderzz of orderss">
+  <ion-card-header>
+    <ion-card-subtitle>{{orderzz.id}}</ion-card-subtitle>
+    <ion-card-title></ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+   Sugar  {{orderzz.ordsugar}}<br>
+   Milk  {{orderzz.ordmilk}}<br>
+   Quantity  {{orderzz.ordquant}}<br>
+    Total price  R{{orderzz.ordprice}}<br>
+  </ion-card-content>
+<ion-button [routerLink]="['/home']">Home <ion-icon name="home"></ion-icon></ion-button>
+
+</ion-card>
+
+
+
+</ion-content>

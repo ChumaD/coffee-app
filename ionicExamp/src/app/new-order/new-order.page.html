@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title align="center">Place order</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="secondary">
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content >
+<ion-grid *ngFor="let orderz of coffee">
+  <ion-row size="4">
+    <ion-col>
+      <img height="100" width="170" src="../../assets/image/{{orderz.pic}}">   
+    </ion-col>
+    <ion-col>
+        {{orderz.name}}
+        R{{orderz.price}}
+    </ion-col>
+    <ion-col>
+      <ion-button [routerLink]="['/place-order', orderz.id]"><ion-icon name="basket"></ion-icon>place order</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  
+</ion-content>
